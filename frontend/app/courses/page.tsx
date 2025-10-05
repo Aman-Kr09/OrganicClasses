@@ -305,6 +305,557 @@ const CoursesPage = () => {
         </div>
       </section>
 
+      {/* Books Section */}
+      <section className="py-8 bg-gray-50">
+        <div className="container-width">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Recommended <span className="text-orange-500">Books</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Carefully curated textbooks and reference materials to supplement your learning journey
+            </p>
+          </motion.div>
+
+          {/* Book Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* NCERT Science Books */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            >
+              {/* Book Image */}
+              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-orange-200">
+                <img
+                  src="/images/books/ncert-science.jpg"
+                  alt="NCERT Science Books"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling!.style.display = 'flex';
+                  }}
+                />
+                <div className="absolute inset-0 bg-orange-500/20 flex items-center justify-center" style={{display: 'none'}}>
+                  <div className="text-center">
+                    <BookOpen className="w-16 h-16 text-orange-600 mx-auto mb-2" />
+                    <p className="text-orange-700 font-semibold">NCERT Science</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    Science
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-6">
+                {/* Book Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-2">NCERT Science Complete Set</h3>
+                
+                {/* Book Details */}
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Clock className="w-4 h-4 mr-2" />
+                    <span>Class: 9th-10th</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Users className="w-4 h-4 mr-2" />
+                    <span>Physics, Chemistry, Biology, Mathematics</span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Complete set of NCERT textbooks for Class 9-10 Science stream including all essential subjects with updated curriculum.
+                </p>
+
+                {/* Price and Delivery */}
+                <div className="flex justify-between items-center mb-4">
+                  <div>
+                    <span className="text-2xl font-bold text-orange-600">₹1,200</span>
+                    <span className="text-sm text-gray-500 ml-2 line-through">₹1,500</span>
+                  </div>
+                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
+                </div>
+
+                {/* Subjects */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-2">Includes:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {['Physics', 'Chemistry', 'Biology', 'Mathematics'].map((subject) => (
+                      <span
+                        key={subject}
+                        className="bg-orange-100 text-orange-700 px-2 py-1 rounded-md text-xs"
+                      >
+                        {subject}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Button */}
+                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
+                  Add to Cart
+                </button>
+              </div>
+            </motion.div>
+
+            {/* NCERT Commerce Books */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            >
+              {/* Book Image */}
+              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-orange-200">
+                <img
+                  src="/images/books/ncert-commerce.jpg"
+                  alt="NCERT Commerce Books"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling!.style.display = 'flex';
+                  }}
+                />
+                <div className="absolute inset-0 bg-orange-500/20 flex items-center justify-center" style={{display: 'none'}}>
+                  <div className="text-center">
+                    <BookOpen className="w-16 h-16 text-orange-600 mx-auto mb-2" />
+                    <p className="text-orange-700 font-semibold">NCERT Commerce</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    Commerce
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-6">
+                {/* Book Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-2">NCERT Commerce Complete Set</h3>
+                
+                {/* Book Details */}
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Clock className="w-4 h-4 mr-2" />
+                    <span>Class: 11th-12th</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Users className="w-4 h-4 mr-2" />
+                    <span>Accountancy, Economics, Business Studies</span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Complete NCERT Commerce textbooks for Class 11-12 with latest syllabus and comprehensive coverage of all topics.
+                </p>
+
+                {/* Price and Delivery */}
+                <div className="flex justify-between items-center mb-4">
+                  <div>
+                    <span className="text-2xl font-bold text-orange-600">₹1,500</span>
+                    <span className="text-sm text-gray-500 ml-2 line-through">₹1,800</span>
+                  </div>
+                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
+                </div>
+
+                {/* Subjects */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-2">Includes:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {['Accountancy', 'Economics', 'Business Studies'].map((subject) => (
+                      <span
+                        key={subject}
+                        className="bg-orange-100 text-orange-700 px-2 py-1 rounded-md text-xs"
+                      >
+                        {subject}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Button */}
+                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
+                  Add to Cart
+                </button>
+              </div>
+            </motion.div>
+
+            {/* English Literature Set */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            >
+              {/* Book Image */}
+              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-orange-200">
+                <img
+                  src="/images/books/english-literature.jpg"
+                  alt="English Literature Set"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling!.style.display = 'flex';
+                  }}
+                />
+                <div className="absolute inset-0 bg-orange-500/20 flex items-center justify-center" style={{display: 'none'}}>
+                  <div className="text-center">
+                    <BookOpen className="w-16 h-16 text-orange-600 mx-auto mb-2" />
+                    <p className="text-orange-700 font-semibold">English Literature</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    English
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-6">
+                {/* Book Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-2">English Literature Complete Set</h3>
+                
+                {/* Book Details */}
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Clock className="w-4 h-4 mr-2" />
+                    <span>Class: 9th-12th</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Users className="w-4 h-4 mr-2" />
+                    <span>Literature & Language</span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Complete English literature collection including novels, poems, and supplementary readers for all classes.
+                </p>
+
+                {/* Price and Delivery */}
+                <div className="flex justify-between items-center mb-4">
+                  <div>
+                    <span className="text-2xl font-bold text-orange-600">₹900</span>
+                    <span className="text-sm text-gray-500 ml-2 line-through">₹1,200</span>
+                  </div>
+                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
+                </div>
+
+                {/* Features */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-2">Includes:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {['Textbooks', 'Novels', 'Poetry', 'Grammar'].map((feature) => (
+                      <span
+                        key={feature}
+                        className="bg-orange-100 text-orange-700 px-2 py-1 rounded-md text-xs"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Button */}
+                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
+                  Add to Cart
+                </button>
+              </div>
+            </motion.div>
+
+            {/* RD Sharma Mathematics */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            >
+              {/* Book Image */}
+              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-orange-200">
+                <img
+                  src="/images/books/rd-sharma.jpg"
+                  alt="RD Sharma Mathematics"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling!.style.display = 'flex';
+                  }}
+                />
+                <div className="absolute inset-0 bg-orange-500/20 flex items-center justify-center" style={{display: 'none'}}>
+                  <div className="text-center">
+                    <BookOpen className="w-16 h-16 text-orange-600 mx-auto mb-2" />
+                    <p className="text-orange-700 font-semibold">RD Sharma</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    Mathematics
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-6">
+                {/* Book Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-2">RD Sharma Mathematics</h3>
+                
+                {/* Book Details */}
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Clock className="w-4 h-4 mr-2" />
+                    <span>Class: 9th-12th</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Users className="w-4 h-4 mr-2" />
+                    <span>Complete Mathematics Reference</span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Most trusted mathematics reference book with detailed solutions and practice problems for all competitive exams.
+                </p>
+
+                {/* Price and Delivery */}
+                <div className="flex justify-between items-center mb-4">
+                  <div>
+                    <span className="text-2xl font-bold text-orange-600">₹2,400</span>
+                    <span className="text-sm text-gray-500 ml-2 line-through">₹2,800</span>
+                  </div>
+                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
+                </div>
+
+                {/* Features */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-2">Features:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {['Detailed Solutions', 'Practice Problems', 'Exam Prep', 'All Classes'].map((feature) => (
+                      <span
+                        key={feature}
+                        className="bg-orange-100 text-orange-700 px-2 py-1 rounded-md text-xs"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Button */}
+                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
+                  Add to Cart
+                </button>
+              </div>
+            </motion.div>
+
+            {/* HC Verma Physics */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            >
+              {/* Book Image */}
+              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-orange-200">
+                <img
+                  src="/images/books/hc-verma.jpg"
+                  alt="HC Verma Physics"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling!.style.display = 'flex';
+                  }}
+                />
+                <div className="absolute inset-0 bg-orange-500/20 flex items-center justify-center" style={{display: 'none'}}>
+                  <div className="text-center">
+                    <BookOpen className="w-16 h-16 text-orange-600 mx-auto mb-2" />
+                    <p className="text-orange-700 font-semibold">HC Verma</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    Physics
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-6">
+                {/* Book Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-2">HC Verma Physics (Set of 2)</h3>
+                
+                {/* Book Details */}
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Clock className="w-4 h-4 mr-2" />
+                    <span>Class: 11th-12th</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Users className="w-4 h-4 mr-2" />
+                    <span>JEE/NEET Preparation</span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Best Physics reference for JEE and NEET preparation with conceptual problems and detailed explanations.
+                </p>
+
+                {/* Price and Delivery */}
+                <div className="flex justify-between items-center mb-4">
+                  <div>
+                    <span className="text-2xl font-bold text-orange-600">₹1,800</span>
+                    <span className="text-sm text-gray-500 ml-2 line-through">₹2,200</span>
+                  </div>
+                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
+                </div>
+
+                {/* Features */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-2">Features:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {['Volume 1 & 2', 'JEE Problems', 'Concepts', 'Solutions'].map((feature) => (
+                      <span
+                        key={feature}
+                        className="bg-orange-100 text-orange-700 px-2 py-1 rounded-md text-xs"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Button */}
+                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
+                  Add to Cart
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Sample Papers & Practice Books */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            >
+              {/* Book Image */}
+              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-orange-200">
+                <img
+                  src="/images/books/sample-papers.jpg"
+                  alt="Sample Papers & Practice Books"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling!.style.display = 'flex';
+                  }}
+                />
+                <div className="absolute inset-0 bg-orange-500/20 flex items-center justify-center" style={{display: 'none'}}>
+                  <div className="text-center">
+                    <BookOpen className="w-16 h-16 text-orange-600 mx-auto mb-2" />
+                    <p className="text-orange-700 font-semibold">Practice Books</p>
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    Practice
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-6">
+                {/* Book Title */}
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Sample Papers & Practice Set</h3>
+                
+                {/* Book Details */}
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Clock className="w-4 h-4 mr-2" />
+                    <span>All Classes</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Users className="w-4 h-4 mr-2" />
+                    <span>Exam Preparation</span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  Complete collection of sample papers, practice tests, and revision guides for all subjects and competitive exams.
+                </p>
+
+                {/* Price and Delivery */}
+                <div className="flex justify-between items-center mb-4">
+                  <div>
+                    <span className="text-2xl font-bold text-orange-600">₹1,800</span>
+                    <span className="text-sm text-gray-500 ml-2 line-through">₹2,400</span>
+                  </div>
+                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
+                </div>
+
+                {/* Features */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-2">Features:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {['Sample Papers', 'Mock Tests', 'Solutions', 'All Subjects'].map((feature) => (
+                      <span
+                        key={feature}
+                        className="bg-orange-100 text-orange-700 px-2 py-1 rounded-md text-xs"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Button */}
+                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
+                  Add to Cart
+                </button>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Contact for Books */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-6 text-center"
+          >
+            <p className="text-gray-600 mb-4">
+              For bulk orders or custom book requirements, contact our book coordinator
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="tel:+919876543210" className="flex items-center space-x-2 text-primary-600 hover:text-primary-700">
+                <div className="w-5 h-5">📞</div>
+                <span>+91 98765 43210</span>
+              </a>
+              <span className="hidden sm:block text-gray-400">|</span>
+              <a href="mailto:books@organicclasses.com" className="flex items-center space-x-2 text-primary-600 hover:text-primary-700">
+                <div className="w-5 h-5">📧</div>
+                <span>books@organicclasses.com</span>
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )
