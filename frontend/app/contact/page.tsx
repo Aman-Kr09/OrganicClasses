@@ -110,7 +110,7 @@ const ContactPage = () => {
       <Navbar />
       
       {/* Header Section */}
-      <section className="bg-gradient-to-br from-primary-50 to-primary-100 pt-24 pb-16">
+      <section className="bg-gradient-to-br from-primary-50 to-primary-100 pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="container-width">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

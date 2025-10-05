@@ -22,33 +22,98 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-2.5 px-4 sm:py-3 sm:px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-sm sm:text-base;
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-primary-600 font-semibold py-3 px-6 rounded-lg border-2 border-primary-500 transition-all duration-200 hover:shadow-md;
+    @apply bg-white hover:bg-gray-50 text-primary-600 font-semibold py-2.5 px-4 sm:py-3 sm:px-6 rounded-lg border-2 border-primary-500 transition-all duration-200 hover:shadow-md text-sm sm:text-base;
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6;
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6;
   }
   
   .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+    @apply py-8 px-3 sm:py-12 sm:px-4 md:py-16 md:px-6 lg:px-8;
   }
   
   .container-width {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8;
   }
 
-  /* Utility to clamp fluid headings for small screens */
+  /* Responsive heading utilities for all screen sizes */
   .heading-fluid-1 {
-    font-size: clamp(1.75rem, 2.5vw + 1rem, 3rem);
-    line-height: 1.15;
+    font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2.5rem);
+    line-height: 1.2;
   }
   .heading-fluid-2 {
-    font-size: clamp(2rem, 3.5vw + 1rem, 3.75rem);
+    font-size: clamp(1.75rem, 4vw + 0.5rem, 3.5rem);
     line-height: 1.1;
+  }
+  .heading-fluid-3 {
+    font-size: clamp(2.25rem, 5vw + 0.5rem, 4rem);
+    line-height: 1.05;
+  }
+
+  /* Responsive text utilities */
+  .text-responsive-sm {
+    font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1rem);
+  }
+  .text-responsive-base {
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem);
+  }
+  .text-responsive-lg {
+    font-size: clamp(1.125rem, 2.5vw + 0.5rem, 1.25rem);
+  }
+
+  /* Enhanced mobile-first spacing */
+  .space-y-responsive > :not([hidden]) ~ :not([hidden]) {
+    margin-top: clamp(0.5rem, 2vw, 1.5rem);
+  }
+
+  /* Grid responsive utilities */
+  .grid-responsive-cards {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+  }
+  
+  .grid-responsive-features {
+    @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8;
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  /* Mobile-first improvements */
+  @media (max-width: 475px) {
+    .container-width {
+      @apply px-2;
+    }
+    
+    .section-padding {
+      @apply py-6 px-2;
+    }
   }
 }
 

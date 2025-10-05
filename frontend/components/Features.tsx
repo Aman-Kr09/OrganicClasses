@@ -72,18 +72,18 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="heading-fluid-2 font-bold text-gray-900 mb-4 sm:mb-6">
             Why Choose <span className="text-primary-500">Organic Classes?</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-responsive-lg text-gray-600 max-w-3xl mx-auto">
             We provide comprehensive education with a personal touch, ensuring every student 
             receives the guidance they need to excel in their academic journey.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -93,8 +93,8 @@ const Features = () => {
               viewport={{ once: true }}
               className="card group hover:scale-105 transition-transform duration-300"
             >
-              <div className={`w-14 h-14 rounded-xl ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <feature.icon className="w-7 h-7" />
+              <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl ${feature.color} flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <feature.icon className="w-6 h-6 sm:w-7 sm:h-7" />
               </div>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">

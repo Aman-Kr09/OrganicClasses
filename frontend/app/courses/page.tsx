@@ -156,7 +156,7 @@ const CoursesPage = () => {
       <Navbar />
       
       {/* Header Section */}
-      <section className="bg-gradient-to-br from-primary-50 to-primary-100 pt-24 pb-16">
+      <section className="bg-gradient-to-br from-primary-50 to-primary-100 pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="container-width">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -164,10 +164,10 @@ const CoursesPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="heading-fluid-2 font-bold text-gray-900 mb-4 sm:mb-6">
               Our <span className="text-primary-500">Courses</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-responsive-lg text-gray-600 max-w-3xl mx-auto">
               Comprehensive courses designed for students from Class 5th to 12th. 
               Choose from our Science, Commerce, and special Government School batches.
             </p>
@@ -176,18 +176,18 @@ const CoursesPage = () => {
       </section>
 
       {/* Filters Section */}
-      <section className="py-8 bg-white shadow-sm">
+      <section className="py-6 sm:py-8 bg-white shadow-sm">
         <div className="container-width">
-          <div className="flex flex-col lg:flex-row gap-6 items-center">
+          <div className="flex flex-col sm:flex-row lg:flex-row gap-4 sm:gap-6 items-stretch sm:items-center">
             {/* Search Bar */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <div className="relative flex-1 max-w-full sm:max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5" />
               <input
                 type="text"
-                placeholder="Search courses, subjects, or teachers..."
+                placeholder="Search courses..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full pl-9 sm:pl-10 pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               />
             </div>
 
@@ -227,13 +227,13 @@ const CoursesPage = () => {
       <section className="section-padding">
         <div className="container-width">
           {filteredCourses.length === 0 ? (
-            <div className="text-center py-16">
-              <BookOpen className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-600 mb-2">No courses found</h3>
-              <p className="text-gray-500">Try adjusting your search criteria</p>
+            <div className="text-center py-12 sm:py-16">
+              <BookOpen className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mx-auto mb-4" />
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-600 mb-2">No courses found</h3>
+              <p className="text-sm sm:text-base text-gray-500">Try adjusting your search criteria</p>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {filteredCourses.map((course, index) => (
                 <motion.div
                   key={course.id}
@@ -243,9 +243,9 @@ const CoursesPage = () => {
                   className="card hover:scale-105 transition-transform duration-300"
                 >
                   {/* Course Header */}
-                  <div className="mb-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                  <div className="mb-4 sm:mb-6">
+                    <div className="flex items-start sm:items-center justify-between mb-3 flex-col xs:flex-row gap-2 xs:gap-0">
+                      <span className={`px-2.5 sm:px-3 py-1 rounded-full text-xs font-medium ${
                         course.batchType === 'Government School' 
                           ? 'bg-green-100 text-green-800'
                           : course.batchType === 'Medical'
@@ -254,11 +254,11 @@ const CoursesPage = () => {
                       }`}>
                         {course.batchType}
                       </span>
-                      <span className="text-2xl font-bold text-primary-500">{course.fee}</span>
+                      <span className="text-lg sm:text-2xl font-bold text-primary-500">{course.fee}</span>
                     </div>
                     
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{course.title}</h3>
-                    <p className="text-gray-600 mb-4">{course.description}</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{course.title}</h3>
+                    <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 line-clamp-2">{course.description}</p>
                   </div>
 
                   {/* Course Details */}
