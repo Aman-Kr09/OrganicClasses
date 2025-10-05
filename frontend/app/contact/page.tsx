@@ -130,9 +130,9 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16">
+      <section className="pt-16 pb-8">
         <div className="container-width">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <motion.a
                 key={info.title}
@@ -155,7 +155,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form & Map Section */}
-      <section className="section-padding">
+      <section className="pt-8 pb-16">
         <div className="container-width">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
