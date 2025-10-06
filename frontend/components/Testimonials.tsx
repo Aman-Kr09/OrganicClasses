@@ -228,7 +228,8 @@ const Testimonials = () => {
               <form onSubmit={(e) => {
                 e.preventDefault()
                 alert('Thank you for your review! We will review and publish it soon.')
-                e.target.reset()
+                const form = e.target as HTMLFormElement;
+                form.reset()
               }}>
                 <div className="space-y-4">
                   <input

@@ -3,11 +3,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Menu, X, BookOpen, Phone, Mail } from 'lucide-react'
+import { Menu, X, BookOpen, Phone, Mail, User, LogOut } from 'lucide-react'
+import { useSession, signIn, signOut } from "next-auth/react"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [showUserMenu, setShowUserMenu] = useState(false)
+  const { data: session, status } = useSession()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,7 +75,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info & Auth */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="tel:+919876543210"
@@ -81,12 +84,74 @@ const Navbar = () => {
               <Phone className="h-4 w-4" />
               <span className="text-sm">+91 98765 43210</span>
             </a>
-            <Link
-              href="/contact"
-              className="btn-primary text-sm"
-            >
-              Book Demo
-            </Link>
+            
+            {/* Authentication */}
+            {status === "loading" ? (
+              <div className="w-8 h-8 rounded-full bg-gray-200 animate-pulse"></div>
+            ) : session ? (
+              <div className="relative">
+                <button
+                  onClick={() => setShowUserMenu(!showUserMenu)}
+                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  <img
+                    src={session.user?.image || '/images/default-avatar.png'}
+                    alt="Profile"
+                    className="w-8 h-8 rounded-full border-2 border-orange-200"
+                  />
+                  <span className="text-sm font-medium text-gray-700">
+                    {session.user?.name?.split(' ')[0]}
+                  </span>
+                </button>
+                
+                {showUserMenu && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2"
+                  >
+                    <Link
+                      href="/profile"
+                      className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors"
+                      onClick={() => setShowUserMenu(false)}
+                    >
+                      <div className="w-4 h-4">
+                        <User />
+                      </div>
+                      <span>My Profile</span>
+                    </Link>
+                    <hr className="my-2" />
+                    <button
+                      onClick={() => {
+                        signOut({ callbackUrl: '/' })
+                        setShowUserMenu(false)
+                      }}
+                      className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors w-full text-left"
+                    >
+                      <div className="w-4 h-4">
+                        <LogOut />
+                      </div>
+                      <span>Sign Out</span>
+                    </button>
+                  </motion.div>
+                )}
+              </div>
+            ) : (
+              <div className="flex items-center space-x-2">
+                <Link
+                  href="/auth/signin"
+                  className="text-gray-600 hover:text-primary-500 font-medium transition-colors text-sm"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/auth/signup"
+                  className="btn-primary text-sm"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -130,9 +195,68 @@ const Navbar = () => {
                   <Phone className="h-4 w-4" />
                   <span>+91 98765 43210</span>
                 </a>
+                
+                {/* Mobile Authentication */}
+                {status === "loading" ? (
+                  <div className="h-10 bg-gray-200 rounded-lg animate-pulse mb-3"></div>
+                ) : session ? (
+                  <div className="space-y-2 mb-3">
+                    <div className="flex items-center space-x-3 p-3 bg-orange-50 rounded-lg">
+                      <img
+                        src={session.user?.image || '/images/default-avatar.png'}
+                        alt="Profile"
+                        className="w-8 h-8 rounded-full border-2 border-orange-200"
+                      />
+                      <div>
+                        <p className="font-medium text-gray-900">{session.user?.name}</p>
+                        <p className="text-xs text-gray-600">{session.user?.email}</p>
+                      </div>
+                    </div>
+                    <Link
+                      href="/profile"
+                      className="flex items-center space-x-2 p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <div className="w-4 h-4">
+                        <User />
+                      </div>
+                      <span>My Profile</span>
+                    </Link>
+                    <button
+                      onClick={() => {
+                        signOut({ callbackUrl: '/' })
+                        setIsOpen(false)
+                      }}
+                      className="flex items-center space-x-2 p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors w-full text-left"
+                    >
+                      <div className="w-4 h-4">
+                        <LogOut />
+                      </div>
+                      <span>Sign Out</span>
+                    </button>
+                  </div>
+                ) : (
+                  <div className="space-y-2 mb-3">
+                    <Link
+                      href="/auth/signin"
+                      className="block w-full text-center py-3 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Sign In
+                    </Link>
+                    <Link
+                      href="/auth/signup"
+                      className="btn-primary w-full text-center block py-3"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Sign Up
+                    </Link>
+                  </div>
+                )}
+                
                 <Link
                   href="/contact"
-                  className="btn-primary w-full text-center block py-3"
+                  className="btn-secondary w-full text-center block py-3"
                   onClick={() => setIsOpen(false)}
                 >
                   Book Free Demo

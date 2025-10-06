@@ -1,10 +1,12 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
+import Providers from '@/components/Providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
+  metadataBase: new URL('https://organic-classes.vercel.app'),
   title: 'Organic Classes - Trusted Coaching Institute for Class 5th to 12th',
   description: 'Empowering Students from Class 5th to 12th to Achieve Academic Excellence. Special batches for Govt. Schools. Expert faculty for Physics, Chemistry, Maths, Biology, Accountancy, Economics & Business Studies.',
   keywords: 'coaching classes, education, physics, chemistry, maths, biology, accountancy, economics, business studies, govt school batches',
@@ -36,7 +38,7 @@ export default function RootLayout({
         <meta name="color-scheme" content="light" />
       </head>
       <body className={inter.className}>
-        {children}
+        <Providers session={null} children={children} />
         <Toaster
           position="top-right"
           toastOptions={{
