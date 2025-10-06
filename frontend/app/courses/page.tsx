@@ -295,7 +295,13 @@ const CoursesPage = () => {
                   </div>
 
                   {/* Action Button */}
-                  <button className="w-full btn-primary">
+                  <button 
+                    className="w-full btn-primary"
+                    onClick={() => {
+                      const message = `Hi! I'm interested in enrolling for ${course.title} (${course.class}). Please provide more details about admission process and fees.`
+                      window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank')
+                    }}
+                  >
                     Enroll Now
                   </button>
                 </motion.div>
@@ -378,13 +384,12 @@ const CoursesPage = () => {
                   Complete set of NCERT textbooks for Class 9-10 Science stream including all essential subjects with updated curriculum.
                 </p>
 
-                {/* Price and Delivery */}
+                {/* Price */}
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <span className="text-2xl font-bold text-orange-600">₹1,200</span>
                     <span className="text-sm text-gray-500 ml-2 line-through">₹1,500</span>
                   </div>
-                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
                 </div>
 
                 {/* Subjects */}
@@ -403,8 +408,14 @@ const CoursesPage = () => {
                 </div>
 
                 {/* Action Button */}
-                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
-                  Add to Cart
+                <button 
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300"
+                  onClick={() => {
+                    const message = `Hi! I'd like to purchase "NCERT Science Complete Set" for ₹1,200. Please confirm availability and payment details.`
+                    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank')
+                  }}
+                >
+                  Buy Now
                 </button>
               </div>
             </motion.div>
@@ -462,13 +473,12 @@ const CoursesPage = () => {
                   Complete NCERT Commerce textbooks for Class 11-12 with latest syllabus and comprehensive coverage of all topics.
                 </p>
 
-                {/* Price and Delivery */}
+                {/* Price */}
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <span className="text-2xl font-bold text-orange-600">₹1,500</span>
                     <span className="text-sm text-gray-500 ml-2 line-through">₹1,800</span>
                   </div>
-                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
                 </div>
 
                 {/* Subjects */}
@@ -487,8 +497,14 @@ const CoursesPage = () => {
                 </div>
 
                 {/* Action Button */}
-                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
-                  Add to Cart
+                <button 
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300"
+                  onClick={() => {
+                    const message = `Hi! I'd like to purchase "NCERT Commerce Complete Set" for ₹1,500. Please confirm availability and payment details.`
+                    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank')
+                  }}
+                >
+                  Buy Now
                 </button>
               </div>
             </motion.div>
@@ -546,13 +562,12 @@ const CoursesPage = () => {
                   Complete English literature collection including novels, poems, and supplementary readers for all classes.
                 </p>
 
-                {/* Price and Delivery */}
+                {/* Price */}
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <span className="text-2xl font-bold text-orange-600">₹900</span>
                     <span className="text-sm text-gray-500 ml-2 line-through">₹1,200</span>
                   </div>
-                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
                 </div>
 
                 {/* Features */}
@@ -571,8 +586,14 @@ const CoursesPage = () => {
                 </div>
 
                 {/* Action Button */}
-                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
-                  Add to Cart
+                <button 
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300"
+                  onClick={() => {
+                    const message = `Hi! I'd like to purchase "English Literature Complete Set" for ₹900. Please confirm availability and payment details.`
+                    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank')
+                  }}
+                >
+                  Buy Now
                 </button>
               </div>
             </motion.div>
@@ -630,13 +651,12 @@ const CoursesPage = () => {
                   Most trusted mathematics reference book with detailed solutions and practice problems for all competitive exams.
                 </p>
 
-                {/* Price and Delivery */}
+                {/* Price */}
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <span className="text-2xl font-bold text-orange-600">₹2,400</span>
                     <span className="text-sm text-gray-500 ml-2 line-through">₹2,800</span>
                   </div>
-                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
                 </div>
 
                 {/* Features */}
@@ -655,8 +675,14 @@ const CoursesPage = () => {
                 </div>
 
                 {/* Action Button */}
-                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
-                  Add to Cart
+                <button 
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300"
+                  onClick={() => {
+                    const message = `Hi! I'd like to purchase "RD Sharma Mathematics" for ₹2,400. Please confirm availability and payment details.`
+                    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank')
+                  }}
+                >
+                  Buy Now
                 </button>
               </div>
             </motion.div>
@@ -714,13 +740,12 @@ const CoursesPage = () => {
                   Best Physics reference for JEE and NEET preparation with conceptual problems and detailed explanations.
                 </p>
 
-                {/* Price and Delivery */}
+                {/* Price */}
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <span className="text-2xl font-bold text-orange-600">₹1,800</span>
                     <span className="text-sm text-gray-500 ml-2 line-through">₹2,200</span>
                   </div>
-                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
                 </div>
 
                 {/* Features */}
@@ -739,8 +764,14 @@ const CoursesPage = () => {
                 </div>
 
                 {/* Action Button */}
-                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
-                  Add to Cart
+                <button 
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300"
+                  onClick={() => {
+                    const message = `Hi! I'd like to purchase "HC Verma Physics (Set of 2)" for ₹1,800. Please confirm availability and payment details.`
+                    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank')
+                  }}
+                >
+                  Buy Now
                 </button>
               </div>
             </motion.div>
@@ -798,13 +829,12 @@ const CoursesPage = () => {
                   Complete collection of sample papers, practice tests, and revision guides for all subjects and competitive exams.
                 </p>
 
-                {/* Price and Delivery */}
+                {/* Price */}
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <span className="text-2xl font-bold text-orange-600">₹1,800</span>
                     <span className="text-sm text-gray-500 ml-2 line-through">₹2,400</span>
                   </div>
-                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Free Delivery</span>
                 </div>
 
                 {/* Features */}
@@ -823,8 +853,14 @@ const CoursesPage = () => {
                 </div>
 
                 {/* Action Button */}
-                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300">
-                  Add to Cart
+                <button 
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-300"
+                  onClick={() => {
+                    const message = `Hi! I'd like to purchase "Sample Papers & Practice Set" for ₹1,800. Please confirm availability and payment details.`
+                    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank')
+                  }}
+                >
+                  Buy Now
                 </button>
               </div>
             </motion.div>
